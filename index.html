@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Students list</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <section>
+      <div class="container">
+      <h1 class="header">Список студентов</h1>
+      <div>
+        <button type="submit" class="btn btn-outline-success add-students">Добавить студента</button>
+        <button type="submit" class="btn btn-outline-success search-students">Найти</button>
+      </div>
+      <div class="wrapper col-md-12 list-group align-items-space-between">
+        <div class="data-checking"></div>
+        <div class="btn-group btn-group-sm mt-auto">
+          <button class="btn btn-success consent-button">Все верно</button>
+          <button class="btn btn-danger return-button">Вернуться и исправить</button>
+        </div>
+      </div>
+
+      <form class="row gy-2 gx-3 align-items-center students-list">
+        <div class="col-auto col-md-6">
+          <label class="form-label name-label">Фамилия</label>
+          <input type="text" class="form-control students-item" id="surname" placeholder="Иванов">
+        </div>
+        <div class="col-auto col-md-6">
+          <label class="form-label name-label">Имя</label>
+          <input type="text" class="form-control students-item" id="name" placeholder="Иван">
+        </div>
+        <div class="col-auto col-md-6">
+          <label class="form-label name-label">Отчество</label>
+          <input type="text" class="form-control students-item" id="middlename" placeholder="Иванович">
+        </div>
+        <div class="col-auto col-md-6">
+          <label class="form-label name-label">Дата рождения</label>
+          <input type="date" class="form-control students-item" id="year-of-birth">
+        </div>
+        <div class="col-auto col-md-6">
+          <div class="alert alert-danger alert-year " role="alert">
+            Введите пожалуйста 4 цифры в формате 2021
+          </div>
+          <div class="alert alert-danger alert-year2000 " role="alert">
+            Год начала обучения находится в диапазоне от 2000-го до текущего года
+          </div>
+          <label class="form-label name-label">Год поступления</label>
+          <input type="text" class="form-control  students-item" id="year-of-admission" placeholder="2020">
+        </div>
+        <div class="col-auto col-md-6">
+          <label class="form-label">Факультет</label>
+          <select class="form-select" id="faculty">
+            <option value="0">Геологоразведочный факультет</option>
+            <option value="1">Факультет технологии разведки и разработки</option>
+            <option value="2">Факультет геологии и геофизики нефти и газа</option>
+            <option value="3">Гидрогеологический факультет</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success button-add">Добавить студента</button>
+      </form>
+    <hr class="hr">
+</div>
+  </section>
+  
+    <div class="container">
+      <form class="row gy-2 gx-3 align-items-center search">
+        <div class="col-auto col-md-6">
+          <input type="text" class="form-control" placeholder="ФИО" id="search-fio">
+        </div>
+        <div class="col-auto col-md-6">
+          <input type="text" class="form-control" placeholder="Факультет" id="search-faculty">
+        </div>
+        <div class="col-auto col-md-6">
+          <input type="text" class="form-control" placeholder="Год начала обучения" id="search-year-of-admission">
+        </div>
+        <div class="col-auto col-md-6">
+          <input type="text" class="form-control" placeholder="Год окончания обучения" id="search-year-of-graduation">
+        </div>
+        <div>
+          <div class="alert alert-danger alert-search col-md-4" role="alert">
+            Совпадений не найдено
+          </div>
+          <button type="submit" class="btn btn-success button-searh col-md-4">Поиск</button>
+        </div>
+      </form>
+    </div>
+
+    <section>
+      <div class="container">
+      <h2 class="header-paragraph">Студенты</h2>
+      <div class="blok">
+        <table class="table table-bordered border-success table-striped" id="sortable">
+          <thead>
+            <tr>
+              <th scope="col" data-name="fio">ФИО</th>
+              <th scope="col" data-name="faculty">Факультет</th>
+              <th scope="col" data-name="age">Дата рождения и возраст</th>
+              <th scope="col" data-name="year of study">Годы обучения и номер курса </th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+          </tbody>
+        </table>
+      </div>
+      </div>
+    </section>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

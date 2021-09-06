@@ -381,10 +381,12 @@ function tableSearch() {
 
     const regFioText = table.rows[i].cells[0].innerHTML;
     const regFacultyText = table.rows[i].cells[1].innerHTML;
-    const regYearOfAdmissionText =
-      table.rows[i].cells[3].getAttribute('data-admission');
-    const regYearOfGraduationText =
-      table.rows[i].cells[3].getAttribute('data-graduation');
+    const regYearOfAdmissionText = table.rows[i].cells[3].getAttribute(
+      'data-admission'
+    );
+    const regYearOfGraduationText = table.rows[i].cells[3].getAttribute(
+      'data-graduation'
+    );
     isFound =
       (searchFio.value == '' || searchFioPhrase.test(regFioText)) &&
       (searchFaculty.value == '' || searchFacultyPhrase.test(regFacultyText)) &&
